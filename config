@@ -3,12 +3,13 @@ ngx_addon_name=ngx_http_c18n_example_module
 if test -n "$ngx_module_link"; then
     # The New Way
     ngx_module_type=HTTP
-    ngx_module_name=ngx_http_c18n_example_module
-    ngx_module_srcs="$ngx_addon_dir/ngx_http_c18n_example_module.c"
+    ngx_module_name=ngx_http_c18n_checksum_body_module
+    ngx_module_srcs="$ngx_addon_dir/ngx_http_c18n_checksum_body_module.c"
+    ngx_module_libs=-lz
 
     . auto/module
 else
     # The Old Way
-    HTTP_MODULES="$HTTP_MODULES ngx_http_c18n_example_module"
-    NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/ngx_http_c18n_example_module.c"
+    HTTP_MODULES="$HTTP_MODULES ngx_http_c18n_checksum_body_module"
+    NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/ngx_http_c18n_checksum_body_module.c"
 fi
